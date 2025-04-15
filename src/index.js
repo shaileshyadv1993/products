@@ -38,6 +38,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const brand = document.createElement("h3");
         const rating = document.createElement("h3");
         const price = document.createElement("h3");
+        const addToKart = document.createElement("button");
+
+        addToKart.innerText = "Add to Kart";
+
+        addToKart.setAttribute(
+          "class",
+          "font-bold text-center py-2 px-3 rounded-full bg-green-400 mb-2 w-11/12 hover:bg-green-600 "
+        );
         card.setAttribute(
           "class",
           "bg-white text-bold rounded-md flex flex-col items-center justify-center"
@@ -53,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
         priceDiv.setAttribute(
           "class",
-          "flex flex-row items-center justify-between w-full px-3 mb-3"
+          "flex flex-row items-center justify-between pb-2 px-3 mb-3 border-b-2 w-11/12 border-dashed border-purple-500"
         );
         thumbnail.src = product.thumbnail;
         prodTitle.innerHTML = product.title;
@@ -72,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         priceDiv.append(rating, price);
         infoDiv.append(brand);
-        card.append(thumbnail, prodTitle, infoDiv, priceDiv);
+        card.append(thumbnail, prodTitle, infoDiv, priceDiv, addToKart);
 
         productDisplay.append(card);
 
