@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function fetchData() {
     let products = [];
     let category = ["all"];
+    let filteredProducts = [];
     try {
       const response = await fetch("https://dummyjson.com/products");
       const data = await response.json();
@@ -25,10 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
       categoryDropdown.appendChild(choice);
     });
 
-    console.log(`Value of dropdown: ${categoryDropDown.value}`);
-
     // Product display
     function productShow(products) {
+      productDisplay.innerHTML = "";
       products.forEach((product) => {
         const card = document.createElement("div");
         const infoDiv = document.createElement("div");
@@ -80,6 +80,18 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
     productShow(products[0]);
+    // Category change
+    categoryDropDown.addEventListener("change", () => {
+      let filterCategory = categoryDropDown.value;
+      if (filterCategory === "all") {
+        productShow(products[0]);
+      } else {
+        filterCategory = products[0].filter(
+          (product) => product.category === filterCategory
+        );
+        productShow(filterCategory);
+      }
+    });
   }
 
   fetchData();
