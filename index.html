@@ -6,6 +6,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
@@ -13,20 +20,25 @@
     <title>Document</title>
   </head>
   <body
-    class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-lvh"
+    class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-lvh font-[poppins]"
   >
     <nav
       class="bg-orange-300 flex flex-row justify-between items-center text-sm sm:text-xl font-bold p-2 shadow-2xl"
     >
-      <div class="font-bold sm:text-3xl text-xl items-center">Logo</div>
-      <div class="flex flex-row justify-between items-center sm:mr-10 mr-2">
-        <ul
-          class="decoration-0 flex flex-row justify-between items-center sm:gap-6 gap-2 sm:mr-20 mr-5 hover:cursor-pointer"
+      <div class="font-bold sm:text-3xl text-xl items-center">Tecsha</div>
+      <div
+        class="flex flex-row justify-between items-center sm:mr-5 mr-2 gap-4"
+      >
+        <div
+          class="sm:flex sm:flex-row sm:justify-between sm:items-center sm:gap-2 sm:mr-5 hover:cursor-pointer hidden"
         >
-          <li>About me</li>
-          <li>Contact</li>
-          <li>Projects</li>
-        </ul>
+          <a href="#" class="sm:text-1xl">About me</a>
+          <a href="#" class="sm:text-1xl">Contact</a>
+          <a href="#" class="sm:text-1xl">Projects</a>
+        </div>
+        <div class="order-2 sm:hidden">
+          <i class="fa-solid fa-bars fa-2x"></i>
+        </div>
         <img
           src="./src/img/shaiesh.JPG"
           alt="avatar"
@@ -35,26 +47,35 @@
         />
       </div>
     </nav>
-    <section class="bg-amber-200 rounded-md w-8xl h-full m-2">
+    <section class="rounded-md w-8xl h-full m-2">
       <div
         class="grid sm:grid-cols-2 grid-cols-1 sm:justify-between justify-center sm:p-5 p-3"
       >
         <div class="flex flex-row sm:justify-end justify-center items-center">
-          <h1 class="font-bold font-[poppins] sm:text-2xl text-md">Products</h1>
+          <h1 class="font-bold font-[poppins] sm:text-4xl text-md text-white">
+            Products
+          </h1>
         </div>
         <div
           class="flex flex-row sm:justify-end justify-center items-center sm:mt-0 mt-3 text-md"
         >
-          <select
-            name=""
-            id="category-dropdown"
-            class="w-40 text-center font-bold rounded-md py-2 bg-amber-100"
-          ></select>
+          <div class="flex flex-row justify-between items-center gap-5">
+            <h1 class="font-bold text-xl">Category</h1>
+            <select
+              name=""
+              id="category-dropdown"
+              class="w-40 text-center font-bold rounded-md py-2 bg-amber-100"
+            ></select>
+          </div>
         </div>
       </div>
-    </section>
 
-    <div class="grid grid-cols-4" id="product-display"></div>
+      <!-- Display products -->
+      <div
+        class="grid-cols-2 gap-2 grid md:grid-cols-4 sm:grid-cols-3 md:gap-4 sm:gap-2 py-3 mx-3"
+        id="product-display"
+      ></div>
+    </section>
     <script src="./src/index.js"></script>
   </body>
 </html>
